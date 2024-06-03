@@ -77,7 +77,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Liste des Articles</h1>
+        <h2>Liste des Articles</h2>
         <a href="{{ route('articles.create') }}" class="btn btn-primary mb-3">Ajouter un article</a>
         <div class="row">
             @foreach($articles as $article)
@@ -89,7 +89,7 @@
                         <p class="card-text">{{ Str::limit($article->description, 100) }}</p>
                         <p class="card-text">Date: {{ $article->date_creation }}</p>
                         <p class="card-text">Type: {{ $article->type }}</p>
-                        <a href="{{ route('articles.read', $article->id) }}" class="btn btn-info btn-sm">Voir</a>
+                        <a href="{{ route('articles.read', $article->id) }}" class="btn btn-info btn-sm">Voir details</a>
                         <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-warning btn-sm">Modifier</a>
                         <form action="{{ route('articles.delete', $article->id) }}" method="POST" style="display:inline-block;">
                             @csrf
