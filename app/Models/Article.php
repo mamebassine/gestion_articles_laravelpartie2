@@ -6,15 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    // Votre code existant...
+    protected $fillable = [
+        'nom',
+        'description',
+        'date_creation',
+        'type',
+        'image',
+        // Ajoutez ici les autres champs fillable
+    ];
 
     public function commentaires()
     {
         return $this->hasMany(Commentaire::class);
     }
-    
-    
 }
+
+    
+
 
 
 
